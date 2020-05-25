@@ -1,2 +1,2 @@
-# passwordencoder
-PasswordEncoder is a library for hashing password.
+# PasswordEncoder
+PasswordEncoder is a Java framework for hashing password.
