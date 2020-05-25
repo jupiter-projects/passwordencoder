@@ -1,7 +1,7 @@
 # PasswordEncoder
 **PasswordEncoder** is a Java framework for hashing password.
 
-This framework targets to provide password encoder for the crypto functions:
+This framework targets to provide password encoder for the following crypto functions:
 1. BCrypt
 2. Scrypt
 3. Argon2
@@ -9,7 +9,8 @@ This framework targets to provide password encoder for the crypto functions:
 So far, only `BCrypt` has been implemented.
 
 Clone this project and install:
-```
+
+```bash
 git clone https://github.com/jupiter-projects/passwordencoder
 cd passwordencoder
 git checkout 1.0.x
@@ -17,9 +18,10 @@ git checkout 1.0.x
 ```
 
 ## BCrypt
+
 This framework uses [jBcrypt](http://www.mindrot.org/projects/jBCrypt/) library.
 
-To use `BCrypt` function, it needs an instance of `BCryptPasswordEncoder`: There are many ways to do so:
+To use `BCrypt` function, it needs an instance of `BCryptPasswordEncoder`. There are many ways to do so:
 
 ```java
 PasswordEncoder passwordEncoder = BCryptPasswordEncoder.create();
@@ -33,7 +35,8 @@ PasswordEncoder passwordEncoder = PasswordEncoderFactory.get(CryptoType.BCRYPT)
         .orElse(null);
 ```
 ```java
-PasswordEncoder passwordEncoder = PasswordEncoder.create(); // For this framework, BCryptPasswordEncoder is intended to be the default password encoder
+// For this framework, BCryptPasswordEncoder is intended to be the default password encoder
+PasswordEncoder passwordEncoder = PasswordEncoder.create();
 ```
 ```java
 PasswordEncoder passwordEncoder = PasswordEncoder.create("bcrypt");
