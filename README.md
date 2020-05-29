@@ -17,6 +17,24 @@ git checkout 1.0.x
 ./mvnw install
 ```
 
+## Add to your project:
+
+### Maven
+
+```xml
+<dependency>
+    <groupId>com.julianjupiter</groupId>
+        <artifactId>passwordencoder</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+### Gradle
+
+```groovy
+implementation 'com.julianjupiter:passwordencoder:1.0.0'
+```
+
 ## BCrypt
 
 This framework uses [jBcrypt](http://www.mindrot.org/projects/jBCrypt/) library.
@@ -52,7 +70,7 @@ String password = "mypassword";
 String hashedPassword = passwordEncoder.hash(password);
 ```
 
-To validate if given password and hashed password are the same, use `verify(password, hashedPassword)` method:
+To validate if given password and hashed password match, use `verify(password, hashedPassword)` method:
 ```java
 String password = "mypassword";
 String hashedPassword = passwordEncoder.hash(password);
