@@ -73,6 +73,6 @@ String hashedPassword = passwordEncoder.hash(password);
 To validate if given password and hashed password match, use `verify(password, hashedPassword)` method:
 ```java
 String password = "mypassword";
-String hashedPassword = passwordEncoder.hash(password);
+String hashedPassword = // retrieve hashed password from database/storage
 boolean matched = passwordEncoder.verify(password, hashedPassword);
 ```
