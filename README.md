@@ -8,7 +8,7 @@ This framework targets to provide password encoder for the following crypto func
 
 So far, only `BCrypt` has been implemented.
 
-Clone this project and install:
+Clone and install this project:
 
 ```bash
 git clone https://github.com/jupiter-projects/passwordencoder
@@ -25,14 +25,14 @@ git checkout 1.0.x
 <dependency>
     <groupId>com.julianjupiter</groupId>
         <artifactId>passwordencoder</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-implementation 'com.julianjupiter:passwordencoder:1.0.0'
+implementation 'com.julianjupiter:passwordencoder:1.0.1'
 ```
 
 ## BCrypt
@@ -45,12 +45,14 @@ To use `BCrypt` function, it needs an instance of `BCryptPasswordEncoder`. There
 PasswordEncoder passwordEncoder = BCryptPasswordEncoder.create();
 ```
 ```java
-PasswordEncoder passwordEncoder = PasswordEncoderFactory.get("bcrypt")
-        .orElse(null);
+PasswordEncoder passwordEncoder = PasswordEncoderFactory.create()
+        .get("bcrypt")
+        .orElse(BCryptPasswordEncoder.create());
 ```
 ```java
-PasswordEncoder passwordEncoder = PasswordEncoderFactory.get(CryptoType.BCRYPT)
-        .orElse(null);
+PasswordEncoder passwordEncoder = PasswordEncoderFactory.create()
+        .get(CryptoType.BCRYPT)
+        .orElse(BCryptPasswordEncoder.create());
 ```
 ```java
 // For this framework, BCryptPasswordEncoder is intended to be the default password encoder
@@ -63,7 +65,7 @@ PasswordEncoder passwordEncoder = PasswordEncoder.create("bcrypt");
 PasswordEncoder passwordEncoder = PasswordEncoder.create(CryptoType.BCRYPT);
 ```
 
-Then, use `hash(password)` method to get the hashed password:
+Then, use `hash(password)` method to get hashed password:
 
 ```java
 String password = "mypassword";
