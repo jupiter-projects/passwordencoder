@@ -13,7 +13,7 @@ Clone and install this project:
 ```bash
 git clone https://github.com/jupiter-projects/passwordencoder
 cd passwordencoder
-git checkout 1.0.x
+git checkout 1.0.1
 ./mvnw install
 ```
 
